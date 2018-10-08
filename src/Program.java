@@ -36,17 +36,14 @@ public class Program {
                             case 1:
                                 System.out.println("Enter name: ");
                                 add.addCountry(sc.next());
-                                System.out.println("1");
                                 break;
                             case 2:
-                                System.out.println("Enter name: ");
-                                add.addCity(sc.next());
-                                System.out.println("2");
+                                System.out.println("Enter name and country id: ");
+                                add.addCity(sc.next(), sc.nextInt());
                                 break;
                             case 3:
-                                System.out.println("Enter firts name, last name, age");
-                                add.addHuman(sc.next(), sc.next(), sc.nextInt());
-                                System.out.println("3");
+                                System.out.println("Enter first name, last name, age, city id");
+                                add.addHuman(sc.next(), sc.next(), sc.nextInt(), sc.nextInt());
                                 break;
                             case 0:
                                 menu.mainMenu();
@@ -99,10 +96,30 @@ public class Program {
                     }
                     break;
                 case 4:
-                    //TODO
+                    while (choise != 0){
+                        menu.showSortingMenu();
+                        choise = sc.nextInt();
+                        switch (choise){
+                            case 1:
+                                System.out.println("Enter the name of a city: ");
+                                show.sameCityHuman(sc.next());
+                            case 2:
+                                System.out.println("Enter the name of a country: ");
+                                show.sameCountryCity(sc.next());
+                                break;
+                            case 3:
+                                System.out.println("Enter the first name and last name: ");
+                                show.humanLocation(sc.next(),sc.next());
+                                break;
+                            case 0:
+                                menu.mainMenu();
+                                break;
+                        }
+                    }
                     break;
                 case 5:
-                    //TODO
+                    show.search(sc.next());
+                    menu.mainMenu();
                     break;
                 case 6:
                     //TODO
